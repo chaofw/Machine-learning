@@ -130,7 +130,7 @@ if __name__ == "__main__":
     
     
     C = 100 # penalty, can be determined by grid search
-            # infinity as hard margin (np.inf)
+            # large number for hard margin
             
     a.SVM_QP(x,y,C)
     

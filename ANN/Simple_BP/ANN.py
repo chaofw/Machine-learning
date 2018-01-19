@@ -63,7 +63,7 @@ class ANN:
         error = 100
         
         ###################################
-        while count < MaxCount or error < tol: ## iteration
+        while count < MaxCount and error > tol: ## iteration
             
             
             w_temp = self.weight_list

@@ -5,7 +5,7 @@
 
 RNN
 
-exercise coding based on online sources for MNIST
+exercise coding based on online sources for MNIST classification
 """
 import matplotlib.pyplot as plt
 import numpy as np

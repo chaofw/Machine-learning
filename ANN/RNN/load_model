@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Jan 29 17:12:51 2018
+
+@author: Chaofeng
+
+load the model
+"""
+import matplotlib.pyplot as plt
+import numpy as np
+import tensorflow as tf
+from tensorflow.examples.tutorials.mnist import input_data
+from RNN import RNN
+
+
+
+if __name__ == "__main__":
+        
+
+    tf.reset_default_graph()
+    
+    batch_size = 32
+        
+    num_hid = 32
+        
+    test_len = 200
+    
+    mnist = input_data.read_data_sets('MINIST_data', one_hot = True)
+
+    test_index = 400
+
+
+    with tf.Session() as sess:
+        
+        
+        new_saver = tf.train.import_meta_graph('RNN_Model.meta')
+        
+        new_saver.restore(sess,tf.train.latest_checkpoint('./'))
+        
+        graph = tf.get_default_graph() 
+        
+        ##writer = tf.summary.FileWriter("logs/", sess.graph)
+        
+        input_layer = graph.get_tensor_by_name("input_layer:0")
+        
+        final_output = graph.get_tensor_by_name("final_output:0")
+
+           
+        test_x = mnist.test.images[test_index : test_index + test_len]
+        test_y = mnist.test.labels[test_index : test_index + test_len]
+            
+        test_y = np.argmax(test_y,1) ## int
+        
+        index = sess.run(final_output, feed_dict = {input_layer: test_x})
+            
+        predict_y = np.argmax(index, 1)
+            
+        accuracy = np.sum(test_y == predict_y)/test_len
+            

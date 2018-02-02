@@ -4,6 +4,7 @@ Python program for machine learning
 [Artificial Neural Network](https://github.com/chaofw/Machine-learning/tree/master/ANN)  
 Including BP algorithm implementation and building up a simple ANN using TensorFlow  
 Implementation of LSTM RNN for MNIST classification using TensorFlow
+Implementation of covolutional NN using TensorFlow
 
 [Gaussian Process Regression](https://github.com/chaofw/Machine-learning/tree/master/GP)  
 Regression based the prior as Gaussian process  

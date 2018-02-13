@@ -23,8 +23,3 @@ Logistic regression using gradient descent and mini-batch SGD
 
 [SVM](https://github.com/chaofw/Machine-learning/tree/master/SVM)  
 SVM using QP
-
-[Ensemble Tree](https://github.com/chaofw/Machine-learning/tree/master/ensemble_tree)  
-Upcoming
-
-
